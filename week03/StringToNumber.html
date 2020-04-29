@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<script>
+  function convertStringToNumber(string, x) {
+    if (arguments.length < 2) {
+      x = 10
+    }
+    var chars = string.split('')
+    var number = 0
+    var i = 0
+    while (i < chars.length && chars[i] != '.') {
+      number = number * x
+      number += chars[i].codePointAt(0) - '0'.codePointAt(0)
+      i++
+    }
+    if (chars[i] == '.') {
+      i++
+    }
+    var fraction = 1
+    while (i < chars.length) {
+      fraction = fraction / x
+      number += (chars[i].codePointAt(0) - '0'.codePointAt(0)) * fraction
+      i++
+    }
+    return number
+  }
+  console.log(convertStringToNumber('100.0123', 10))
+
+  function convertNumberToString(number, x) {
+    var len = (number + '').split('.')[1].length
+    var integer = Math.floor(number)
+    var fraction = (number - integer).toFixed(len)
+    var string = ''
+
+    while (integer > 0) {
+      string = integer % x + string
+      integer = Math.floor(integer / x)
+    }
+    if (fraction > 0) {
+      string += '.'
+    }
+    var i = 0
+    var int = 0
+    while (i < len) {
+      fraction = fraction * x
+      int = i === len - 1 ? Math.round(fraction) : Math.floor(fraction)
+      string += int
+      fraction -= int
+      i++
+    }
+    return string
+  }
+  console.log(convertNumberToString(100.0123, 10))
+</script>
