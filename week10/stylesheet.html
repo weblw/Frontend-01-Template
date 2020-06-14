@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<style title="Hello">
+  a::before {
+    color: red;
+    content: 'Hello';
+  }
+</style>
+<!-- data URI 写成内链形式 {}需要转义 -->
+<link rel="stylesheet" title="x" href="data:text/css,p%7Bcolor:blue%7D">
+<a> world</a>
+<p>ppp</p>
+
+<script>
+  console.log(document.styleSheets)
+  // 获取一条 cssRule
+  console.log(document.styleSheets[0].cssRules[0].style.color = 'pink')
+</script>

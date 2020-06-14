@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- window API -->
+<script>
+  let childWindow = window.open(
+    "about:blank", "_blank", "width=100,heigth=100,left=100,top=100"
+  )
+  childWindow.moveBy(-50, -50)
+  childWindow.resizeBy(50, 50)
+  // 不起作用
+  window.moveBy(30, 30)
+</script>
+<!-- scroll API -->
+<script>
+  window.scrollY
+  window.scrollX
+  window.scroll(0, 0)
+  window.scrollBy(0, 50)
+
+  $0.scrollBy(30, 30)
+  $0.scrollTo(0, 100)
+  $0.scrollTop
+  $0.scrollLeft
+  $0.scrollHeight
+</script>
+
+<!-- 元素位置 API -->
+<script>
+  $0.getClientRects()
+  $0.getBoundingClientRect()
+</script>
+
+<!-- 屏幕尺寸 -->
+<script>
+  window.innerWidth
+  window.innerHeight
+  window.outerWidth
+  window.outerHeight
+  window.devicePixelRatio // 物理像素和逻辑像素的比值
+  // window的准确尺寸
+  document.documentElement.getBoundingClientRect()
+</script>

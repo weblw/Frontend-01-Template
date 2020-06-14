@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<div id="a">
+  <span>1</span>
+  <p>2</p>
+  <a>3</a>
+  <div>4</div>
+</div>
+
+<script>
+  let element = document.getElementById('a')
+
+  // 第一种实现
+  function reverseChildren1(element) {
+    let children = Array.prototype.slice.call(element.childNodes)
+
+    for (let child of children) {
+      element.removeChild(child)
+    }
+    // element.innerHTML = '' 可替代上面的remove循环
+
+    children.reverse()
+
+    for (let child of children) {
+      element.appendChild(child)
+    }
+  }
+
+  // 第二种实现
+  function reverseChildren2(element) {
+    let l = element.childNodes.length
+    while (l-- > 0) {
+      console.log(element.childNodes[l])
+      element.appendChild(element.childNodes[l])
+    }
+  }
+
+  // 第三种range实现
+  function reverseChildren3(element) {
+    let range = new Range()
+    // 选中所有子元素
+    range.selectNodeContents(element)
+    // 摘出所有子元素
+    let fragment = range.extractContents()
+    let l = fragment.childNodes.length
+    while (l-- > 0) {
+      fragment.appendChild(fragment.childNodes[l])
+    }
+    // 将排序好元素插入到element
+    element.appendChild(fragment)
+  }
+
+  reverseChildren3(element)
+</script>
