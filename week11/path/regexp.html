@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<style>
+  .keywords {
+    color: blue;
+  }
+
+  .punctuator {
+    color: blueviolet
+  }
+
+  .identifier {
+    color: skyblue;
+  }
+</style>
+<pre id="container"></pre>
+<script>
+  const source = `
+  function sleep(t) {
+    return new Promise(resolve => {
+      setTimeout(resolve, t)
+    })
+  }
+`
+
+  const regexp = /(function|new|return)|([ \t\n\r]+)|([a-zA-Z0-9]*)|([\(\)\{\}\,\:])/g
+
+  const dictionary = ['keywords', 'whitespace', 'identifier', 'punctuator']
+  let token = null
+  let lastIndex = 0
+
+  const container = document.getElementById('container')
+  do {
+    lastIndex = regexp.lastIndex
+    console.log(lastIndex)
+    token = regexp.exec(source)
+    console.log(token)
+    if (!token) break
+    let text = document.createElement('span')
+    text.textContent = token[0]
+    for (let i = 1; i < 5; i++) {
+      if (token[i]) text.classList.add(dictionary[i - 1])
+    }
+    container.appendChild(text)
+  } while (token && lastIndex < regexp.lastIndex)
+</script>

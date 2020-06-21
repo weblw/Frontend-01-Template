@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<style>
+  body {
+    width: 100%;
+  }
+
+  #container {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 100px auto;
+  }
+
+  #container div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  #red {
+    background-color: red;
+  }
+
+  #yellow {
+    background-color: yellow;
+  }
+
+  #green {
+    background-color: green;
+  }
+</style>
+<div id="container">
+  <div id="red"></div>
+  <div id="yellow"></div>
+  <div id="green"></div>
+</div>
+<script>
+  const red = document.getElementById('red')
+  const yellow = document.getElementById('yellow')
+  const green = document.getElementById('green')
+  const change = (element, color) => {
+    element.style.backgroundColor = color
+  }
+  setInterval(() => {
+    change(red, '#ccc')
+  }, 10000)
+</script>
