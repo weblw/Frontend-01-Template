@@ -1,0 +1,41 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\asus\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add yeoman-generator --dev
+
+PATH: 
+  D:\cmder\bin;D:\cmder\vendor\conemu-maximus5\ConEmu\Scripts;D:\cmder\vendor\conemu-maximus5;D:\cmder\vendor\conemu-maximus5\ConEmu;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\wbem;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\jdk1.8.0_31\bin;D:\cmder;F:\Fluter\flutter\bin;F:\Fluter\SDK\tools;C:\Program Files\nodejs\;C:\Users\asus\AppData\Local\Microsoft\WindowsAppsD:\Program Files (x86)\Java\jre7\bin；;D:\Program Files\MongoDB\Server\3.4\bin;C:\Users\asus\AppData\Local\Microsoft\WindowsApps;C:\Users\asus\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\asus\AppData\Roaming\npm;C:\Users\asus\AppData\Local\Yarn\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\share\vim\vim74;D:\cmder\
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.18.2
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\asus\AppData\Local\Yarn\Cache\v4\npm-locate-path-5.0.0-1afba396afd676a6d42504d0a67a3a7eb9f62aa0\node_modules\locate-path\index.d.ts' -> 'F:\github\Frontend-01-Template\week17\yeoman-liwei\node_modules\read-pkg-up\node_modules\locate-path\index.d.ts'
+
+npm manifest: 
+  {
+    "name": "generator-test",
+    "version": "0.1.0",
+    "description": "",
+    "files": [
+      "app"
+    ],
+    "keywords": [
+      "yeoman-generator"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+      "read-pkg-up": "^7.0.1",
+      "yeoman-generator": "^4.11.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
